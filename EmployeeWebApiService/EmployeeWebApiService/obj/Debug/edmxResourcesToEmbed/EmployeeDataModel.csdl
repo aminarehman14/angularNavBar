@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="staffId" />
+    </Key>
+    <Property Name="staffId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="dateOfBirth" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="jobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="annualSalary" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="otherStaffDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="EmployeeDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+  </EntityContainer>
+</Schema>
