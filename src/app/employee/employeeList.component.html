@@ -8,7 +8,7 @@
 </employee-count>
 <br />
 <br />
-<table>
+<table mat-table>
   <thead>
     <tr>
       <th>Staff ID</th>
@@ -26,16 +26,21 @@
           selectedEmployeeCountRadioButton == employee.gender
         "
       >
-        <td>{{ employee.staffID }}</td>
+        <td>{{ employee.staffId }}</td>
         <td>{{ employee.firstName }}</td>
         <td>{{ employee.gender }}</td>
         <td>{{ employee.annualSalary | currency: "USD":true:"1.2-2" }}</td>
         <td>{{ employee.dateOfBirth | date: "dd/MM/yyyy" | uppercase }}</td>
       </tr>
     </ng-container>
-    <tr *ngIf="!employees || employees.length == 0">
+    <tr *ngIf="!employees">
       <td colspan="5">
-        Loading Employee Data
+        Loading Employee Data. Please Wait...
+      </td>
+    </tr>
+    <tr *ngIf="employees && employees.length == 0">
+      <td colspan="5">
+        No Employees to Display
       </td>
     </tr>
   </tbody>

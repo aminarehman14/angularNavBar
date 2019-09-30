@@ -25,7 +25,6 @@ export class EmployeeList implements OnInit {
   }
 
   getTotalEmployeesCount(): number {
-    console.log(this.employees.length);
     return this.employees.length;
   }
   getTotalMaleEmployeesCount(): number {

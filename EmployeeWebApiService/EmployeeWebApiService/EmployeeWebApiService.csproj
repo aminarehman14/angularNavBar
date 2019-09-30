@@ -170,6 +170,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>EmployeeDataModel.tt</DependentUpon>
@@ -192,6 +193,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\StudentData.cs">
+      <DependentUpon>StudentDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +232,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\StudentDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentDataModel.edmx</DependentUpon>
+      <LastGenOutput>StudentDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentDataModel.edmx</DependentUpon>
+      <LastGenOutput>StudentDataModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -241,6 +270,13 @@
     <Content Include="EmployeeDataModel.edmx.diagram">
       <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\StudentDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentDataModel.edmx.diagram">
+      <DependentUpon>StudentDataModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -264,7 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

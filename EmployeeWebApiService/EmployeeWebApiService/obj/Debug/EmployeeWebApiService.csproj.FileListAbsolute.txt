@@ -1,4 +1,3 @@
-C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\obj\Debug\EmployeeWebApiService.csprojAssemblyReference.cache
 C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\obj\Debug\EmployeeWebApiService.csproj.CoreCompileInputs.cache
 C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\bin\EmployeeWebApiService.dll.config
 C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\bin\EmployeeWebApiService.dll
