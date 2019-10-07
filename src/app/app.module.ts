@@ -15,9 +15,9 @@ import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.com
 import { EmployeeList } from "./employee/employeeList.component";
 import { EmployeeCount } from "./employee/employeeCount.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { StudentsComponent } from "./student/students.component";
-import { StudentListComponent } from "./student/student-list/student-list.component";
-import { StudentComponent } from './students/student/student.component';
+import { StudentsComponent } from "./students/students.component";
+import { StudentListComponent } from "./students/student-list/student-list.component";
+import { StudentComponent } from "./students/student/student.component";
 @NgModule({
   declarations: [
     AppComponent,
