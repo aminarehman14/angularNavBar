@@ -8,7 +8,7 @@ import { StudentService } from "./shared/student.service";
   providers: [StudentService]
 })
 export class StudentsComponent implements OnInit {
-  constructor(private StudentService: StudentService) {}
+  constructor(private studentService: StudentService) {}
 
   ngOnInit() {}
 }

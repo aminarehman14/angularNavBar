@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using EmployeeWebApiService.Models;
+using System.Web.Http.Cors;
 
 namespace EmployeeWebApiService.Controllers
 {
+  [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class StudentController : ApiController
     {
         private StudentDatabaseEntities db = new StudentDatabaseEntities();
@@ -74,10 +76,6 @@ namespace EmployeeWebApiService.Controllers
         [ResponseType(typeof(StudentData))]
         public IHttpActionResult PostStudentData(StudentData studentData)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
             db.StudentDatas.Add(studentData);
             db.SaveChanges();

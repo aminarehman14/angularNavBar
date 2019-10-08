@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { StudentsComponent } from "./students/students.component";
 import { StudentListComponent } from "./students/student-list/student-list.component";
 import { StudentComponent } from "./students/student/student.component";
+import { ToastrModule } from "ngx-toastr";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { StudentComponent } from "./students/student/student.component";
     RoutingModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

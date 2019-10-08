@@ -87,3 +87,6 @@ C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\
 C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\obj\Debug\EmployeeWebApiService.csproj.CopyComplete
 C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\obj\Debug\EmployeeWebApiService.dll
 C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\obj\Debug\EmployeeWebApiService.pdb
+C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\bin\System.Web.Cors.dll
+C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\bin\System.Web.Http.Cors.dll
+C:\Users\Amina Rehman\angularNavBar\EmployeeWebApiService\EmployeeWebApiService\bin\System.Web.Http.Cors.xml
