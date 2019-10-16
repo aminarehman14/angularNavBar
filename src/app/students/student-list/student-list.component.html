@@ -1,14 +1,13 @@
-<h1>Student List is Here</h1>
 <table class="table table-sm table-hover">
   <tr *ngFor="let student of studentService.studentList">
     <td>{{ student.studentId }}</td>
     <td>{{ student.firstName }}- {{ student.lastName }}</td>
     <td>{{ student.gender }}</td>
     <td>
-      <a class="btn">
+      <a class="btn" (click)="showForEdit(student)">
         <i class="fa fa-pencil-square-o"> </i>
       </a>
-      <a class="btn text-danger">
+      <a class="btn text-danger" (click)="onDelete(student.studentId)">
         <i class="fa fa-trash-o"> </i>
       </a>
     </td>

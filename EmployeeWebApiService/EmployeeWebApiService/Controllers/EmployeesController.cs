@@ -16,18 +16,18 @@ namespace EmployeeWebApiService.Controllers
         return entities.Employees.ToList();
       }
     }
-    public HttpResponseMessage Get(string staffId)
+    public HttpResponseMessage Get(string id)
     {
       using (EmployeeDBEntities entities = new EmployeeDBEntities())
       {
-        var entity = entities.Employees.FirstOrDefault(e => e.staffId == staffId);
+        var entity = entities.Employees.FirstOrDefault(e => e.staffId == id);
 
         if (entity != null)
         {
           return Request.CreateResponse(HttpStatusCode.OK, entity);
         }
         else {
-          return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employee with Id = " + staffId.ToString() + "not found");
+          return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employee with Id = " +id.ToString() + "not found");
         }
       }
     }

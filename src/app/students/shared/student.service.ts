@@ -17,7 +17,7 @@ import { map } from "rxjs/operators";
 export class StudentService {
   selectedStudent: StudentData;
   studentList: StudentData[];
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
   postStudentData(stu: StudentData) {
     var body = JSON.stringify(stu);
@@ -31,7 +31,7 @@ export class StudentService {
       .map(x => x.json());
   }
 
-  putEmployee(id, stu) {
+  putStudentData(id, stu) {
     var body = JSON.stringify(stu);
     var headerOptions = new Headers({ "Content-Type": "application/json" });
     var requestOptions = new RequestOptions({
@@ -39,7 +39,7 @@ export class StudentService {
       headers: headerOptions
     });
     return this.http
-      .put("http://localhost:60788/api/Student" + id, body, requestOptions)
+      .put("http://localhost:60788/api/student/" + id, body, requestOptions)
       .map(res => res.json());
   }
 
@@ -55,7 +55,7 @@ export class StudentService {
       });
   }
 
-  deleteEmployee(id: number) {
+  deleteStudent(id: number) {
     return this.http
       .delete("http://localhost:60788/api/student" + id)
       .map(res => res.json());

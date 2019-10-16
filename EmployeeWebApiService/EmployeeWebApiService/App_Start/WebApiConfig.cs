@@ -17,8 +17,8 @@ namespace EmployeeWebApiService
 
       config.Routes.MapHttpRoute(
           name: "DefaultApi",
-          routeTemplate: "api/{controller}/{staffId}",
-          defaults: new { staffId = RouteParameter.Optional }
+          routeTemplate: "api/{controller}/{id}",
+          defaults: new { id = RouteParameter.Optional }
       );
     }
   }

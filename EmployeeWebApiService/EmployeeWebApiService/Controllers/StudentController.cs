@@ -24,29 +24,70 @@ namespace EmployeeWebApiService.Controllers
             return db.StudentDatas;
         }
 
-        // GET: api/Student/5
-        [ResponseType(typeof(StudentData))]
-        public IHttpActionResult GetStudentData(int id)
+    // GET: api/Student/5
+
+    //////public HttpResponseMessage Get(string id)
+    //////{
+    //////  using (EmployeeDBEntities entities = new EmployeeDBEntities())
+    //////  {
+    //////    var entity = entities.Employees.FirstOrDefault(e => e.staffId == id);
+
+    //////    if (entity != null)
+    //////    {
+    //////      return Request.CreateResponse(HttpStatusCode.OK, entity);
+    //////    }
+    //////    else
+    //////    {
+    //////      return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employee with Id = " + id.ToString() + "not found");
+    //////    }
+    //////  }
+    //////}
+
+    //[ResponseType(typeof(StudentData))]
+    //public IHttpActionResult GetStudentData(int id)
+    //{
+
+    //  StudentData studentData = db.StudentDatas.Find(id);
+    //  if (studentData == null)
+    //  {
+    //    return NotFound();
+    //  }
+
+    //  return Ok(studentData);
+    //}
+    [ResponseType(typeof(StudentData))]
+    public HttpResponseMessage GetStudentData(int id)
+    {
+      using (StudentDatabaseEntities entities = new StudentDatabaseEntities())
+      { var entity = entities.StudentDatas.FirstOrDefault(s => s.studentId == id);
+        if (entity != null)
         {
-            StudentData studentData = db.StudentDatas.Find(id);
-            if (studentData == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(studentData);
+          return Request.CreateResponse(HttpStatusCode.OK, entity);
         }
+        else {
+          return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Student with Id = " + id.ToString() + "not found");
 
-        // PUT: api/Student/5
-        [ResponseType(typeof(void))]
+        }
+      }
+  
+      //  StudentData studentData = db.StudentDatas.Find(id);
+      //if (studentData == null)
+      //{
+      //  return NotFound();
+      //}
+
+      //return Ok(studentData);
+    }
+    // PUT: api/Student/5
+    [ResponseType(typeof(void))]
         public IHttpActionResult PutStudentData(int id, StudentData studentData)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+      if (!ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
 
-            if (id != studentData.studentId)
+      if (id != studentData.studentId)
             {
                 return BadRequest();
             }

@@ -1,107 +1,58 @@
-<form class="stu-form" #studentForm="ngForm">
+<form class="stu-form" #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+  <input type="hidden" name="studentId" #studentId="ngModel" [(ngModel)]="studentService.selectedStudent.studentId">
+
+
   <div class="form-row">
     <div class="form-group col-md-4">
-      <input
-        class="form-control"
-        name="firstName"
-        #firstName="ngModel"
-        placeholder="First Name"
-        required
-        [(ngModel)]="studentService.selectedStudent.firstName"
-      />
-      <div
-        class="validation-error"
-        *ngIf="firstName.invalid && firstName.touched"
-      >
+      <input class="form-control" name="firstName" #firstName="ngModel" placeholder="First Name" required
+        [(ngModel)]="studentService.selectedStudent.firstName" />
+      <div class="validation-error" *ngIf="firstName.invalid && firstName.touched">
         This Field is Required
       </div>
     </div>
     <div class="form-group col-md-4">
-      <input
-        class="form-control"
-        name="lastName"
-        #lastName="ngModel"
-        placeholder="Last Name"
-        required
-        [(ngModel)]="studentService.selectedStudent.lastName"
-      />
-      <div
-        class="validation-error"
-        *ngIf="lastName.invalid && lastName.touched"
-      >
+      <input class="form-control" name="lastName" #lastName="ngModel" placeholder="Last Name" required
+        [(ngModel)]="studentService.selectedStudent.lastName" />
+      <div class="validation-error" *ngIf="lastName.invalid && lastName.touched">
         This Field is Required
       </div>
     </div>
     <div class="form-group col-md-4">
-      <input
-        class="form-control"
-        name="middleName"
-        #middleName="ngModel"
-        placeholder="Middle Name"
-        [(ngModel)]="studentService.selectedStudent.middleName"
-      />
+      <input class="form-control" name="middleName" #middleName="ngModel" placeholder="Middle Name"
+        [(ngModel)]="studentService.selectedStudent.middleName" />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <input
-        class="form-control"
-        name="gender"
-        #gender="ngModel"
-        placeholder="Student Gender"
-        [(ngModel)]="studentService.selectedStudent.gender"
-        required
-      />
+      <input class="form-control" name="gender" #gender="ngModel" placeholder="Student Gender"
+        [(ngModel)]="studentService.selectedStudent.gender" required />
       <div class="validation-error" *ngIf="gender.invalid && gender.touched">
         This Field is Required
       </div>
     </div>
     <div class="form-group col-md-6">
-      <input
-        class="form-control"
-        name="dateOfBirth"
-        #dateOfBirth="ngModel"
-        placeholder="Date of Birth"
-        [(ngModel)]="studentService.selectedStudent.dateOfBirth"
-        required
-      />
-      <div
-        class="validation-error"
-        *ngIf="dateOfBirth.invalid && dateOfBirth.touched"
-      >
+      <input class="form-control" name="dateOfBirth" #dateOfBirth="ngModel" placeholder="Date of Birth"
+        [(ngModel)]="studentService.selectedStudent.dateOfBirth" required />
+      <div class="validation-error" *ngIf="dateOfBirth.invalid && dateOfBirth.touched">
         This Field is Required
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-12">
-      <input
-        size="250"
-        class="form-control"
-        name="otherStudentDetails"
-        #otherStudentDetails="ngModel"
+      <input size="250" class="form-control" name="otherStudentDetails" #otherStudentDetails="ngModel"
         placeholder="Please Enter Additional Student Information Here"
-        [(ngModel)]="studentService.selectedStudent.otherStudentDetails"
-      />
+        [(ngModel)]="studentService.selectedStudent.otherStudentDetails" />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-8">
-      <button
-        [disabled]="!studentForm.valid"
-        type="submit"
-        class="btn btn-lg btn-block btn-info"
-        (click)="onSubmit(studentForm)"
-      >
+      <button [disabled]="!studentForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
         <i class="fa fa-save"></i> Submit
       </button>
     </div>
     <div class="form-group col-md-4">
-      <button
-        type="button"
-        class="btn btn-secondary btn-lg btn-block"
-        (click)="resetForm(studentForm)"
-      >
+      <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="resetForm(studentForm)">
         <i class="fa fa-repeat"></i>
         Reset
       </button>

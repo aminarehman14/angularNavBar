@@ -1,6 +1,6 @@
+import { StudentService } from "./../shared/student.service";
 import { NgForm } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";
-import { StudentService } from "../shared/student.service";
 import { ToastrService } from "ngx-toastr";
 @Component({
   selector: "app-student",
@@ -11,7 +11,7 @@ export class StudentComponent implements OnInit {
   constructor(
     private studentService: StudentService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -26,15 +26,26 @@ export class StudentComponent implements OnInit {
       lastName: "",
       middleName: "",
       otherStudentDetails: ""
-    };
+    }
   }
   onSubmit(form: NgForm) {
-    this.studentService.postStudentData(form.value).subscribe(data => {
-      this.resetForm(form);
-      this.toastr.success(
-        "New Student Record Added Successfully",
-        "Student Register"
-      );
-    });
+    if (form.value.studentId == null) {
+      this.studentService.postStudentData(form.value).subscribe(data => {
+        this.resetForm(form);
+        this.studentService.getStudentList();
+        this.toastr.success(
+          "New Student Record Added Successfully",
+          "Student Register"
+        );
+      });
+    }
+    else {
+      this.studentService.putStudentData(form.value.studentId, form.value)
+        .subscribe(data => {
+          this.resetForm(form);
+          this.studentService.getStudentList();
+          this.toastr.info("Record Updated Successfully", "Student Register");
+        });
+    }
   }
 }
